@@ -22,7 +22,7 @@ def sample_recommendation(model, data, user_ids):
         known_positives = data['item_labels'][data['train'].tocsr()[user_id].indices]
         #Result of Model
         scores = model.predict(user_id, np.arange(n_items))
-		#Ranking the ratings order
+        #Ranking the ratings order
         top_items = data['item_labels'][np.argsort(-scores)]
         #printing the results
         print("User %s" % user_id)
